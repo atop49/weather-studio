@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 2,
+  "world": "暖纸白天气台 — The Weather Desk",
+  "surface": "weather-studio",
+  "theme": "light",
+  "colorMeta": {
+    "paper": { "value": "#f5f1e8", "role": "ground" },
+    "ink": { "value": "#111111", "role": "primary-text" },
+    "muted": { "value": "#8c877d", "role": "secondary-text" },
+    "accent": { "value": "#ff4d00", "role": "signal" },
+    "hairline": { "value": "rgba(17,17,17,0.14)", "role": "hairline" },
+    "hairline-strong": { "value": "rgba(17,17,17,0.28)", "role": "hairline-strong" },
+    "glass": { "value": "rgba(255,255,255,0.45)", "role": "glass-surface" }
+  },
+  "typographyMeta": {
+    "display": { "family": "YouSheBiaoTiHei", "use": "brand + city title" },
+    "sans": { "family": "Geist", "use": "body" },
+    "mono": { "family": "Geist Mono", "use": "numbers + labels" }
+  },
+  "motion": {
+    "card-enter": "320ms ease-out translateY(10px)",
+    "skeleton-shimmer": "1.4s ease-in-out infinite",
+    "reducedMotion": "all animations disabled"
+  },
+  "breakpoints": { "sm": 640 },
+  "components": [
+    "ds-search-bar",
+    "ds-current-card",
+    "ds-forecast-strip",
+    "ds-favorite-list",
+    "ds-skeleton",
+    "ds-error-box"
+  ],
+  "narrative": "第四件作品。玻璃拟态反套路：不用深蓝紫，用暖纸白上的晨光磨砂。核心是一屏一个大温度读数，其余数据安静排队。橙只做交互信号，天气本身保持灰度+图标。"
+}

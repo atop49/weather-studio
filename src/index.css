@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'YouSheBiaoTiHei';
+  src: url('./assets/YouSheBiaoTiHei.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-paper: #f5f1e8;
+  --color-ink: #111111;
+  --color-muted: #8c877d;
+  --color-accent: #2a6fa8;
+  --color-hairline: rgba(17, 17, 17, 0.14);
+  --color-hairline-strong: rgba(17, 17, 17, 0.28);
+  --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
+  --font-display: 'YouSheBiaoTiHei', 'Geist', sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}
+
+::selection {
+  background-color: rgba(42, 111, 168, 0.22);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(17, 17, 17, 0.3) transparent;
+}
+
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(17, 17, 17, 0.08);
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.card-enter {
+  animation: card-enter 320ms ease-out both;
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
